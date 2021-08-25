@@ -9,7 +9,9 @@ export default class AddTask extends Component {
     handleChange = (e)=> this.setState({newText:e.target.value})
     handleSubmit = (e)=> {
         e.preventDefault();
+        this.state.newText.trim() === ""?alert('please fill out input field'):
         this.props.add(this.state.newText)
+        this.setState({newText:""})
     }
     render() {
         return (
